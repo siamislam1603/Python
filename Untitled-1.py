@@ -48,5 +48,59 @@ list.append("four") #add to last
 print(f"after appended \'4\':{list}")
 print(f"popped item of index 3: {list.pop(3)}") # by default item popped from last
 
+#dictionaries/object as key value pair
 
+d={'key1':['a','b','c'],'k2':100,'k3':10.5}
+print(f'\nDictionaries:{d}')
+print(f"index 2 to upper:{d['key1'][2].upper()}")
+d['key1'][0]='d'
+print(f"Override a by d:{d['key1']}")
+print(f"dictionary keys:{d.keys()}")
+print(f"Dictionaries values:{d.values()}")
+print(f"Dictionary key value pairs:{d.items()}")
 
+#tuples can't override item like lists
+
+t=('a','a','b')
+print(f"\nTuples:{t}")
+print(f"Count \'a\' in tuples: {t.count('a')}")
+print(f"Index of \'a\' in tuples: {t.index('a')}:{t[0]}")
+
+#Set unordered collection of unique elements
+
+myset=set()
+myset.add(1)
+myset.add(2)
+myset.add(1)
+print(f"\nSet of unique elements:{myset}")
+
+mylist=[1,1,1,1,2,2,2,2,3,3]
+newset=set(mylist)
+print(f"List: {mylist}")
+print(f"Set from list: {newset}")
+
+#File I/O
+with open('myfile.txt',mode='r') as myfile: #using this we don't need to bother about closing the file
+    contents=myfile.read()
+    myfile.seek(0) #as file read happened cursor positioned must be at 0 position for again read
+    list=myfile.readlines()
+print(f"\nRead mode:\nFile read:\n{contents}")
+print(f"List from file on \\n: {list}")
+
+with open('hello.txt',mode='w+') as newFile:
+    newFile.write("One on 1st")
+    newFile.write("\nTwo on 2nd")
+    newFile.write("\nThree on 3rd")
+    newFile.seek(0)
+    print(f"\nWrite and read:\n{newFile.read()}")
+
+#statements
+print("\n\nStatements if-elif-else:\n")
+n=61
+if (n%2==0):
+    print(f"{n} is even")
+elif (n%2!=0):
+    if (n<50):
+        print(f"{n} is odd and below 50")
+    else:
+        print(f"{n} is odd and above 50")
