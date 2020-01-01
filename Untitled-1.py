@@ -104,3 +104,84 @@ elif (n%2!=0):
         print(f"{n} is odd and below 50")
     else:
         print(f"{n} is odd and above 50")
+
+#For loops
+print(f"\nFor loops:\nlist:")
+mylist=[1,2,3,4,5,6,7]
+for i in mylist:
+    if (i%2==0):
+        print(f"{i} is even")
+    else:
+        print(f"{i} is odd")
+
+tup=(1,2,3)
+print(f"\nTuples:")
+for i in tup:
+    print(i)
+
+print(f'\nTuples as list:')
+newList=[(1,2),(3,4),(5,6)]
+for i in newList:
+    print(i)
+
+d={'k1':1,'k2':3,'k3':6}
+print(f"\nDictionaries for loop:")
+for key,value in d.items():
+    print(f'{key}:{value}')
+
+#While loop
+print(f"\nWhile loop:")
+x=1
+sum=0
+while x<11:
+    sum+=x
+    x+=1
+else:
+    print(f'sum:{sum}\n')
+
+#useful operators
+sum=0
+for i in range(1,11,1): #i=1;i<11;i=i+1
+    sum+=i
+print(f'For loop using \'range\' operator:\nsum:{sum}')
+
+#enumerate as list of tuple
+word='abcde'
+print(f'\n\'enumerate\' operator as list of tuples:')
+for key,value in enumerate(word):
+    print(f"{key}:{value}")
+
+#zip as list of tuple
+print(f'\n\'zip\' operator as list of tuples:')
+list1=[1,2,3]
+list2=['a','b','c','d']
+
+for i in zip(list1,list2):
+    print(i)
+
+#In as conditioning
+print(f'\n\'In\' Operator in conditioning:')
+print(f"\'x\' in [1,2,3]:{'x' in [1,2,3]}")
+
+#min-max operator
+print(f'\n\'min-max\' Operator:')
+print(f"min([10,20,30,40,50]):{min([10,20,30,40,50])}")
+print(f"max([10,20,30,40,50]):{max([10,20,30,40,50])}")
+
+#random shuffle operator
+print(f'\n\'Random\' Operator Shuffle:')
+from random import shuffle
+mylist=[1,2,3,4,5,6,7,8,9,10]
+shuffle(mylist)
+print(f"Random shuffle:{mylist}")
+
+#random randInt operator
+print(f"\n\'Random\' Operator randint:")
+from random import randint
+print(f'randint(0,100):{randint(0,100)}')
+
+#input operator for input
+print(f"\n\'input\' Operator for prompting user:")
+a=int(input('Enter a no:'))
+b=int(input('Enter 2nd no:'))
+print(f"Sum of {a} and {b}:{a+b}")
