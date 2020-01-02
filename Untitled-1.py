@@ -185,3 +185,45 @@ print(f"\n\'input\' Operator for prompting user:")
 a=int(input('Enter a no:'))
 b=int(input('Enter 2nd no:'))
 print(f"Sum of {a} and {b}:{a+b}")
+
+#list comprehension
+print(f"\n\'list comprehension\' Operator:")
+mylist=[x for x in 'Hello World']
+print(mylist)
+mylist=[x**2 for x in range(0,11,2) if x%2==0]
+print(mylist)
+celcius=[0,10,20,34.5]
+farenheight=[((9/5)*x+32) for x in celcius]
+print(f'Farenheight: {farenheight}')
+
+#Function
+print("\n\'Function\':")
+def pig_latin(word):
+    first_letter=word[0]
+    if (first_letter in 'aeiou'):
+        pig_word=word+'ay'
+    else:
+        pig_word=word[1:]+word[0]+'ay'
+    return pig_word
+
+result=pig_latin('hello')
+print(result)
+# args,kwargs
+print("\n\'args\' and \'kwargs\' argument in function:")
+x=50
+def my_func(*args,**kwargs):
+    global x
+    print(f'args as tuples:{args}')
+    print(f'kwargs as dictionaries:{kwargs}')
+    print(f"I would like {args[0]} {kwargs['fruit']}")
+    return x+=50
+
+result=my_func(10,20,30,fruit='orange',food='egg',animal='dog')
+print(f'Global variable change:{result}')
+
+#lambda expression
+print("\n\'Lambda expression\':")
+names=['siam','hello','world']
+mylist=[1,2,3,4,5,6,7,8,9]
+list(map(lambda x: x[0],names))
+list(filter(lambda x: x%2==0,mylist))
